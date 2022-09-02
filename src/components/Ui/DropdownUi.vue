@@ -1,6 +1,7 @@
 <template>
     <div class="relative">
-        <button @click="dropdownToggler" class="px-4 py-1.5 border rounded" type="button">
+        <button @click="dropdownToggler" :class="['px-4 py-1.5', dropdownButtonDinamicStyles]"
+            type="button">
             <div class="flex items-center text-gray-700">
                 <span>
                     <slot name="dropdownButtonContent"></slot>
@@ -34,10 +35,30 @@
 export default {
     name: 'DropdownUi',
 
+    props: ['borderless', 'unround', 'opened'],
+
     data() {
         return {
             dropdownShow: false,
+            dropdownButtonBorder: 'border',
+            dropdownButtonRounded: 'rounded',
+
+            dropdownButtonDinamicStyles: [],
         };
+    },
+
+    created() {
+        if (this.borderless)
+            this.dropdownButtonBorder = null;
+
+        if (this.unround)
+            this.dropdownButtonRounded = null;
+
+        if (this.opened)
+            this.dropdownShow = true;
+        
+        this.dropdownButtonDinamicStyles.push(this.dropdownButtonBorder);
+        this.dropdownButtonDinamicStyles.push(this.dropdownButtonRounded);
     },
 
     methods: {

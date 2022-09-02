@@ -5,7 +5,7 @@
 		<div class="py-5 flex">
 			<DropdownUi>
 				<template v-slot:dropdownButtonContent>
-					Dropdown text
+					Dropdown
 				</template>
 				<template v-slot:dropdownContent>
 					Opa
