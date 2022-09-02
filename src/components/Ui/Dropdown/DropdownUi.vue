@@ -1,8 +1,9 @@
 <template>
     <div class="relative">
-        <button type="button" class="border border-gray-200 px-4 py-2 rounded">
+        <button @click.stop.prevent="toggle" type="button"
+            class="border border-gray-200 px-4 py-2 rounded">
             <div class="flex items-center">
-                <span>
+                <span class="text-base font-medium">
                     Dropdown text
                 </span>
                 <span class="ml-2">
@@ -15,15 +16,22 @@
             </div>
         </button>
 
-        <div class="w-56 mt-1 border border-gray-200 p-2 shadow-md rounded">
+        <div v-show="isOpen"
+            class="w-56 mt-1 border border-gray-200 p-2 shadow-md rounded">
             <div class="hover:bg-gray-200 cursor-pointer duration-200 block py-2 px-4">
                 Dropdown item 1
             </div>
             <div class="hover:bg-gray-200 cursor-pointer duration-200 block py-2 px-4">
                 Dropdown item 2
             </div>
+
+            <div class="border-b border-gray-200 my-2"></div>
+
             <div class="hover:bg-gray-200 cursor-pointer duration-200 block py-2 px-4">
                 Dropdown item 3
+            </div>
+            <div class="hover:bg-gray-00 cursor-pointer duration-200 block py-2 px-4">
+                Dropdown item 4
             </div>
         </div>
     </div>
@@ -33,6 +41,18 @@
 
 export default {
     name: 'DropdownUi',
+
+    data() {
+        return {
+            isOpen: false,
+        };
+    },
+
+    methods: {
+        toggle() {
+            this.isOpen = !this.isOpen;
+        },
+    },
 };
 
 </script>
