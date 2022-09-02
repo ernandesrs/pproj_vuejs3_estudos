@@ -24,7 +24,7 @@
         </button>
 
         <div v-show="dropdownShow"
-            :class="['absolute mt-1 w-56 border border-gray-200 px-4 py-3 shadow-md', dropdownContentDinamicStyles]">
+            :class="['absolute mt-1 w-56 border border-gray-200 px-2 py-2 shadow-md', dropdownContentDinamicStyles]">
             <slot name="dropdownContent"></slot>
         </div>
     </div>
