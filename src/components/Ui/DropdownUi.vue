@@ -1,7 +1,7 @@
 <template>
     <div class="relative">
-        <button @click="dropdownToggler" :class="['px-4 py-1.5', dropdownButtonDinamicStyles]"
-            type="button">
+        <button @click="dropdownToggler"
+            :class="['px-4 py-1.5', dropdownButtonDinamicStyles]" type="button">
             <div class="flex items-center text-gray-700">
                 <span>
                     <slot name="dropdownButtonContent"></slot>
@@ -24,7 +24,7 @@
         </button>
 
         <div v-show="dropdownShow"
-            class="mt-1 absolute w-full max-w-xs border border-gray-200 px-4 py-3 shadow-md">
+            :class="['absolute mt-1 w-56 border border-gray-200 px-4 py-3 shadow-md', dropdownContentDinamicStyles]">
             <slot name="dropdownContent"></slot>
         </div>
     </div>
@@ -35,30 +35,31 @@
 export default {
     name: 'DropdownUi',
 
-    props: ['borderless', 'unround', 'opened'],
+    props: ['borderless', 'unround', 'opened', 'contentPosition'],
 
     data() {
         return {
             dropdownShow: false,
-            dropdownButtonBorder: 'border',
-            dropdownButtonRounded: 'rounded',
 
-            dropdownButtonDinamicStyles: [],
+            dropdownButtonDinamicStyles: ['border', 'rounded'],
+            dropdownContentDinamicStyles: [],
         };
     },
 
     created() {
         if (this.borderless)
-            this.dropdownButtonBorder = null;
+            this.dropdownButtonDinamicStyles = this.dropdownButtonDinamicStyles.filter(item => item != 'border');
 
         if (this.unround)
-            this.dropdownButtonRounded = null;
+            this.dropdownButtonDinamicStyles = this.dropdownButtonDinamicStyles.filter(item => item != 'rounded');
 
         if (this.opened)
             this.dropdownShow = true;
-        
-        this.dropdownButtonDinamicStyles.push(this.dropdownButtonBorder);
-        this.dropdownButtonDinamicStyles.push(this.dropdownButtonRounded);
+
+        if (this.contentPosition == 'right')
+            this.dropdownContentDinamicStyles = 'right-0';
+        else
+            this.dropdownContentDinamicStyles = 'left-0';
     },
 
     methods: {
