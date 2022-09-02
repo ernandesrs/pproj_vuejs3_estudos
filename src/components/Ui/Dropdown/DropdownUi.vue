@@ -4,7 +4,7 @@
             class="border border-gray-200 px-4 py-2 rounded">
             <div class="flex items-center">
                 <span class="text-base font-medium">
-                    Dropdown text
+                    {{ text }}
                 </span>
                 <span class="ml-2">
                     <svg class="w-3 h-3" fill="none" stroke="currentColor"
@@ -18,21 +18,7 @@
 
         <div v-show="isOpen"
             class="w-56 mt-1 border border-gray-200 p-2 shadow-md rounded">
-            <div class="hover:bg-gray-200 cursor-pointer duration-200 block py-2 px-4">
-                Dropdown item 1
-            </div>
-            <div class="hover:bg-gray-200 cursor-pointer duration-200 block py-2 px-4">
-                Dropdown item 2
-            </div>
-
-            <div class="border-b border-gray-200 my-2"></div>
-
-            <div class="hover:bg-gray-200 cursor-pointer duration-200 block py-2 px-4">
-                Dropdown item 3
-            </div>
-            <div class="hover:bg-gray-00 cursor-pointer duration-200 block py-2 px-4">
-                Dropdown item 4
-            </div>
+            <slot />
         </div>
     </div>
 </template>
@@ -41,6 +27,13 @@
 
 export default {
     name: 'DropdownUi',
+
+    props: {
+        text: {
+            type: String,
+            default: 'Dropdown'
+        }
+    },
 
     data() {
         return {
