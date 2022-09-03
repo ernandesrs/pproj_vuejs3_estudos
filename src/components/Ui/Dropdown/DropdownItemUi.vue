@@ -9,6 +9,9 @@
 export default {
     name: 'DropdownItemUi',
 
+    // (injeção de dependências) recebe funcionalidades enviadas pelo componente pai
+    inject: ['dropdown'],
+
     props: {
         href: {
             type: String,
@@ -48,6 +51,11 @@ export default {
     methods: {
         onClick(evt) {
             this.$emit('dropdownItemClick', evt);
+            this.closeDropdown();
+        },
+
+        closeDropdown() {
+            this.dropdown.close();
         }
     }
 };

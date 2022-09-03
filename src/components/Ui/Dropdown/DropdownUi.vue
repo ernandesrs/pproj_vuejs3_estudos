@@ -35,6 +35,14 @@ export default {
         }
     },
 
+    // torna funcionalidades disponíveis aos elementos filhos
+    provide() {
+        return {
+            // neste caso, está passando a instância completa do componente aos filhos
+            dropdown: this
+        };
+    },
+
     data() {
         return {
             isOpen: false,
@@ -45,6 +53,10 @@ export default {
         toggle() {
             this.isOpen = !this.isOpen;
         },
+
+        close() {
+            this.isOpen = false;
+        }
     },
 };
 
