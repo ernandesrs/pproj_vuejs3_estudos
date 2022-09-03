@@ -47,7 +47,7 @@ export default {
 
     methods: {
         onClick(evt) {
-            this.$emit('click', evt);
+            this.$emit('dropdownItemClick', evt);
         }
     }
 };

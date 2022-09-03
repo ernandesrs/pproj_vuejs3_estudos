@@ -15,7 +15,7 @@
 						Item 3
 					</DropdownItemUi>
 					<DropdownSeparatorUi />
-					<DropdownItemUi>
+					<DropdownItemUi @dropdownItemClick="onItem4Click">
 						Item 4
 					</DropdownItemUi>
 					<DropdownItemUi>
@@ -34,6 +34,12 @@ import DropdownSeparatorUi from '@/components/Ui/Dropdown/DropdownSeparatorUi.vu
 
 export default {
 	name: 'HomeView',
-	components: { DropdownUi, DropdownItemUi, DropdownSeparatorUi }
+	components: { DropdownUi, DropdownItemUi, DropdownSeparatorUi },
+
+	methods: {
+		onItem4Click(evt) {
+			console.log(evt);
+		}
+	}
 }
 </script>
