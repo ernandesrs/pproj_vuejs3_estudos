@@ -1,5 +1,5 @@
 <template>
-    <Component :is="is" :href="localHref" :to="to"
+    <Component :is="is" :href="localHref" :to="to" @click="onClick"
         class="w-full text-left hover:bg-gray-200 cursor-pointer duration-200 block py-2 px-4">
         <slot />
     </Component>
@@ -44,5 +44,11 @@ export default {
             return 'button';
         },
     },
+
+    methods: {
+        onClick(evt) {
+            this.$emit('click', evt);
+        }
+    }
 };
 </script>
