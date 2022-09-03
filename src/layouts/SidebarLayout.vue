@@ -2,7 +2,6 @@
     <MainSidebar>
         <template v-slot:sidebar>
             <SidebarElem title="Dashboard" :nav-items="dashNavItems"></SidebarElem>
-            <SidebarElem title="Site" :nav-items="siteNavItems"></SidebarElem>
             <SidebarElem title="Configurações" :nav-items="settingsNavItems">
             </SidebarElem>
         </template>
@@ -47,28 +46,32 @@ export default {
                     title: 'Listagem de mensagens',
                     href: 'https://www.google.com',
                     target: '_blank',
+                },
+                {
+                    text: 'Com submenu',
+                    title: 'Abrir submenu',
+                    href: '#',
+                    subnav: [
+                        {
+                            text: 'Sub item #1',
+                            title: '',
+                            to: { name: 'index' },
+                            target: '_blank',
+                        },
+                        {
+                            text: 'Sub item #2',
+                            title: 'Sub item #2',
+                            href: 'https://www.google.com',
+                            target: '_blank',
+                        },
+                        {
+                            text: 'Sub item #3',
+                            title: 'Sub item #3',
+                            href: 'https://www.google.com',
+                            target: '_blank',
+                        },
+                    ]
                 }
-            ],
-
-            siteNavItems: [
-                {
-                    text: 'Páginas',
-                    title: 'Listagem de páginas',
-                    href: 'https://www.google.com',
-                    target: '_blank',
-                },
-                {
-                    text: 'Seções',
-                    title: 'Listagem de seções',
-                    href: 'https://www.google.com',
-                    target: '_blank',
-                },
-                {
-                    text: 'Menus',
-                    title: 'Listagem de menus',
-                    href: 'https://www.google.com',
-                    target: '_blank',
-                },
             ],
 
             settingsNavItems: [
