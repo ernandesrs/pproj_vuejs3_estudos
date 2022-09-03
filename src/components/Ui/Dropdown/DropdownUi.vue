@@ -49,6 +49,10 @@ export default {
         };
     },
 
+    mounted() {
+        document.addEventListener('click', this.clickOutListener);
+    },
+
     methods: {
         toggle() {
             this.isOpen = !this.isOpen;
@@ -56,7 +60,13 @@ export default {
 
         close() {
             this.isOpen = false;
-        }
+        },
+
+        clickOutListener(evt) {
+            if (!this.$el.contains(evt.target)) {
+                this.close();
+            }
+        },
     },
 };
 
