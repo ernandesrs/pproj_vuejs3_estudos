@@ -1,7 +1,8 @@
 <template>
     <div class="relative">
         <button @click.stop.prevent="toggle" type="button"
-            class="border border-gray-200 px-4 py-2" :class="{ 'rounded-md': rounded }">
+            class="px-4 py-2 transition ease-in-out duration-150 z-50"
+            :class="{ 'rounded-md': rounded, 'border border-gray-200': !naked }">
             <div class="flex items-center">
                 <span class="text-base font-medium">
                     {{ text }}
@@ -23,7 +24,7 @@
             leave-class="transform opacity-100 scale-100"
             leave-to-class="transform opacity-0 scale-95">
             <div v-show="isOpen"
-                class="w-56 origin-top-left left-0 absolute mt-1 border border-gray-200 p-2 shadow-md rounded z-50">
+                class="bg-white w-56 origin-top-left left-0 absolute mt-1 border border-gray-200 p-2 shadow-md rounded z-50">
                 <slot />
             </div>
         </Transition>
@@ -49,6 +50,11 @@ export default {
         rounded: {
             type: Boolean,
             default: false,
+        },
+
+        naked: {
+            type: Boolean,
+            default: false
         }
     },
 

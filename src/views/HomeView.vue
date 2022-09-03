@@ -63,6 +63,26 @@
 					</DropdownItemUi>
 				</DropdownUi>
 			</div>
+			<div class="px-2">
+				<DropdownUi text="Menu 4" naked>
+					<DropdownItemUi href="http://www.google.com">
+						Item 1
+					</DropdownItemUi>
+					<DropdownItemUi :to="{ name: 'about' }">
+						Item 2
+					</DropdownItemUi>
+					<DropdownItemUi href="http://www.google.com" :to="{ name: 'about' }">
+						Item 3
+					</DropdownItemUi>
+					<DropdownSeparatorUi />
+					<DropdownItemUi @dropdownItemClick="onItem4Click">
+						Item 4
+					</DropdownItemUi>
+					<DropdownItemUi>
+						Item 5
+					</DropdownItemUi>
+				</DropdownUi>
+			</div>
 		</div>
 	</div>
 </template>
