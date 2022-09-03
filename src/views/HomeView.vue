@@ -4,7 +4,7 @@
 
 		<div class="py-5 flex">
 			<div class="px-2">
-				<DropdownUi text="Menu">
+				<DropdownUi text="Menu 1">
 					<DropdownItemUi href="http://www.google.com">
 						Item 1
 					</DropdownItemUi>

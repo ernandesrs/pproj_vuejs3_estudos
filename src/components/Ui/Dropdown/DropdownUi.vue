@@ -16,10 +16,17 @@
             </div>
         </button>
 
-        <div v-show="isOpen"
-            class="w-56 mt-1 border border-gray-200 p-2 shadow-md rounded">
-            <slot />
-        </div>
+        <Transition enter-active-class="transition ease-out duration-100"
+            enter-class="transform opacity-0 scale-95"
+            enter-to-class="transform opacity-100 scale-100"
+            leave-active-class="transition ease-in duration-75"
+            leave-class="transform opacity-100 scale-100"
+            leave-to-class="transform opacity-0 scale-95">
+            <div v-show="isOpen"
+                class="w-56 origin-top-left left-0 absolute mt-1 border border-gray-200 p-2 shadow-md rounded z-50">
+                <slot />
+            </div>
+        </Transition>
     </div>
 </template>
 
