@@ -7,7 +7,8 @@ const routes = [
 		path: '/',
 		component: DefaultLayout,
 		children: [
-			{ path: '', name: 'index', component: HomeView }
+			{ path: '', name: 'index', component: HomeView },
+			{ path: 'sobre', name: 'about', component: HomeView },
 		]
 	},
 ]

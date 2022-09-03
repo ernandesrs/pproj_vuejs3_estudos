@@ -5,15 +5,18 @@
 		<div class="py-5 flex">
 			<div class="px-2">
 				<DropdownUi text="Menu">
-					<DropdownItemUi>
+					<DropdownItemUi href="http://www.google.com">
 						Item 1
 					</DropdownItemUi>
-					<DropdownItemUi>
+					<DropdownItemUi :to="{ name: 'about' }">
 						Item 2
+					</DropdownItemUi>
+					<DropdownItemUi href="http://www.google.com" :to="{ name: 'about' }">
+						Item 3
 					</DropdownItemUi>
 					<DropdownSeparatorUi />
 					<DropdownItemUi>
-						Item 3
+						Item 4
 					</DropdownItemUi>
 				</DropdownUi>
 			</div>
