@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from './../layouts/DefaultLayout'
+import SidebarLayout from './../layouts/SidebarLayout'
 import HomeView from './../views/HomeView.vue'
 
 const routes = [
@@ -11,6 +12,13 @@ const routes = [
 			{ path: 'sobre', name: 'about', component: HomeView },
 		]
 	},
+	{
+		path: '/me',
+		component: SidebarLayout,
+		children: [
+			{ path: 'sidebar', name: 'sidebar', component: HomeView },
+		]
+	}
 ]
 
 const router = createRouter({
