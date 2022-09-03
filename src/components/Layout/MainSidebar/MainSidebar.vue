@@ -5,7 +5,7 @@
             <!-- sidebar header -->
             <header class="flex justify-center items-center py-3">
                 <div v-if="!$slots.header">
-                    <img class="w-16 h-16" src="./../../assets/logo.png" alt="">
+                    <img class="w-16 h-16" src="./../../../assets/logo.png" alt="">
                 </div>
                 <slot v-else name="header" />
             </header>
@@ -13,7 +13,8 @@
 
             <!-- sidebar content -->
             <div>
-                <div class="mx-auto py-3 px-5 bg-yellow-400">
+                <div class="mx-auto py-3 px-5">
+                    <slot name="sidebar" />
                 </div>
             </div>
             <!-- /sidebar content -->
