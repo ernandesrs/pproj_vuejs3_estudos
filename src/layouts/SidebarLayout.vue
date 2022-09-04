@@ -1,9 +1,9 @@
 <template>
-    <MainSidebar>
+    <SidebarUi>
         <template v-slot:sidebar>
-            <SidebarElem title="Dashboard" :nav-items="dashNavItems"></SidebarElem>
-            <SidebarElem title="Configurações" :nav-items="settingsNavItems">
-            </SidebarElem>
+            <SidebarElemUi title="Dashboard" :nav-items="dashNavItems"></SidebarElemUi>
+            <SidebarElemUi title="Configurações" :nav-items="settingsNavItems">
+            </SidebarElemUi>
         </template>
 
         <template v-slot:content>
@@ -17,7 +17,7 @@
 
             <MainFooter></MainFooter>
         </template>
-    </MainSidebar>
+    </SidebarUi>
 </template>
 
 <script>
@@ -25,12 +25,12 @@
 import MainHeader from '@/components/Layout/MainHeader.vue';
 import MainMain from '@/components/Layout/MainMain.vue';
 import MainFooter from '@/components/Layout/MainFooter.vue';
-import MainSidebar from '@/components/Layout/MainSidebar/MainSidebar.vue';
-import SidebarElem from '@/components/Layout/MainSidebar/SidebarElem.vue';
+import SidebarUi from '@/components/Ui/Sidebar/SidebarUi.vue';
+import SidebarElemUi from '@/components/Ui/Sidebar/SidebarElemUi.vue';
 
 export default {
     name: "SidebarLayout",
-    components: { MainHeader, MainMain, MainFooter, MainSidebar, SidebarElem },
+    components: { MainHeader, MainMain, MainFooter, SidebarElemUi, SidebarUi },
 
     data() {
         return {

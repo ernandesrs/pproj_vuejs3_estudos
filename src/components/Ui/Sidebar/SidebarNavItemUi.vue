@@ -17,7 +17,7 @@
 
 <script>
 export default {
-    name: 'SidebarNavItem',
+    name: 'SidebarNavItemUi',
 
     props: {
         text: {

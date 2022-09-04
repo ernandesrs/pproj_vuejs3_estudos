@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sidebar-mobile {
+    @apply fixed z-50;
+    width: 100%;
+    max-width: 275px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.content-mobile {
+    @apply col-span-12;
+}
+
+.sidebar {
+    @apply relative col-span-3 xl:col-span-2;
+}
+
+.content {
+    @apply overflow-y-auto md:col-span-9 xl:col-span-10;
+}
+
+.content-wosidebar {
+    @apply overflow-y-auto col-span-12;
+}
