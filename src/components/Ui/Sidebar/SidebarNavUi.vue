@@ -1,6 +1,6 @@
 <template>
-    <nav class="flex flex-col" :class="{'bg-gray-800 border-l-2 border-gray-700 pl-4': isSubnav}">
-        <SidebarNavItemUi v-for="item in navItems" v-bind:key="item" :nav-item="item" />
+    <nav class="flex flex-col">
+        <SidebarNavItemUi v-for="navItem in navItems" v-bind:key="navItem.id" :nav-item="navItem" />
     </nav>
 </template>
 
@@ -21,11 +21,6 @@ export default {
         navItems: {
             type: Array,
             default: null
-        },
-
-        isSubnav: {
-            type: Boolean,
-            default: false
         },
     },
 
