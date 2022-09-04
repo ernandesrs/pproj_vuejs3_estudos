@@ -11,11 +11,14 @@
 </template>
 
 <script>
+
 import MainHeader from '@/components/Layout/MainHeader.vue';
 import MainMain from '@/components/Layout/MainMain.vue';
 import MainFooter from '@/components/Layout/MainFooter.vue';
+
 export default {
     name: "DefaultLayout",
     components: { MainHeader, MainMain, MainFooter }
 }
+
 </script>

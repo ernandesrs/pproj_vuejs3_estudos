@@ -2,19 +2,16 @@
     <div class="pb-4">
         <h3 v-if="title" class="text-gray-400 font-semibold py-2">{{ title }}</h3>
         <div class="py-4">
-            <SidebarNavUi v-if="navItems" :nav-items="navItems" />
         </div>
     </div>
 </template>
 
 <script>
 
-import SidebarNavUi from './SidebarNavUi.vue';
-
 export default {
     name: "SidebarElemUi",
 
-    components: { SidebarNavUi },
+    components: {  },
 
     props: {
         title: {
