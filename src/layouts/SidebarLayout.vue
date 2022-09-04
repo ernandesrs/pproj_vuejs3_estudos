@@ -71,6 +71,31 @@ export default {
                             target: '_blank',
                         },
                     ]
+                },
+                {
+                    text: 'Com submenu',
+                    title: 'Abrir submenu',
+                    href: '#',
+                    subnav: [
+                        {
+                            text: 'Sub item #1',
+                            title: '',
+                            to: { name: 'index' },
+                            target: '_blank',
+                        },
+                        {
+                            text: 'Sub item #2',
+                            title: 'Sub item #2',
+                            href: 'https://www.google.com',
+                            target: '_blank',
+                        },
+                        {
+                            text: 'Sub item #3',
+                            title: 'Sub item #3',
+                            href: 'https://www.google.com',
+                            target: '_blank',
+                        },
+                    ]
                 }
             ],
 

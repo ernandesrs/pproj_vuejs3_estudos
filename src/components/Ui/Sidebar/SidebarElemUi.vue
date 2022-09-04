@@ -2,7 +2,7 @@
     <div class="pb-4">
         <h3 v-if="title" class="text-gray-400 font-semibold py-2">{{ title }}</h3>
         <div class="py-4">
-            <SidebarNavUi v-if="navItems" :navItems="navItems" />
+            <SidebarNavUi v-if="navItems" :nav-items="navItems" />
         </div>
     </div>
 </template>
