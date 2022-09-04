@@ -62,7 +62,7 @@
                 </div>
             </div>
             <!-- /sidebar topbar -->
-            {{visible}}
+
             <!-- sidebar content -->
             <slot name="content" />
             <!-- /sidebar content -->
