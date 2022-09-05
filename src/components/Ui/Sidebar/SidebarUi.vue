@@ -6,7 +6,7 @@
         </div>
         <!-- /backdrop -->
 
-        <div v-show="visible" class="bg-gray-900 z-40" :class="sidebarClass">
+        <div v-show="visible" class="bg-gray-900 z-40 overflow-y-auto" :class="sidebarClass">
             <!-- sidebar header -->
             <header class="flex justify-center items-center py-3">
                 <div v-if="!$slots.header">
