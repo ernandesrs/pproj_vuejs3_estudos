@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-12 h-screen overflow-hidden relative">
         <!-- backdrop -->
-        <BackdropUi v-if="inMobile" v-show="visible" />
+        <BackdropUi @click="backdropClicked" v-if="inMobile" v-show="visible" />
         <!-- /backdrop -->
 
         <!-- sidebar -->
@@ -132,12 +132,17 @@ export default {
         toggler() {
             this.visible = !this.visible;
         },
+
         windowResized() {
             let cwidth = window.innerWidth;
             if (cwidth <= MIN_WIDTH && !this.inMobile)
                 this.inMobile = true;
             else if (cwidth > MIN_WIDTH && this.inMobile)
                 this.inMobile = false;
+        },
+
+        backdropClicked() {
+            this.toggler();
         },
     },
 };
