@@ -23,26 +23,29 @@
     border: 3px solid #f3f3f3;
 }
 
+.sidebar {
+    @apply bg-gray-900 z-40 overflow-y-auto;
+    height: 100vh;
+}
+
 .sidebar-mobile {
     @apply fixed z-50;
     width: 100%;
     max-width: 275px;
-    height: 100vh;
-    overflow-y: auto;
 }
 
 .content-mobile {
     @apply col-span-12;
 }
 
-.sidebar {
+.sidebar-desktop {
     @apply relative col-span-3 xl:col-span-2;
 }
 
-.content {
+.content-desktop {
     @apply overflow-y-auto md:col-span-9 xl:col-span-10;
 }
 
-.content-wosidebar {
+.content-desktop-wosidebar {
     @apply overflow-y-auto col-span-12;
 }

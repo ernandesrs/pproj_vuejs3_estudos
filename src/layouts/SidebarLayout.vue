@@ -1,11 +1,11 @@
 <template>
     <SidebarUi>
-        <template v-slot:sidebar>
+        <template v-slot:sidebarElements>
             <SidebarElemUi title="Dashboard" :nav-items="dashNavItems" />
             <SidebarElemUi title="Configurações" :nav-items="settingsNavItems" />
         </template>
 
-        <template v-slot:content>
+        <template v-slot:contentArea>
             <MainMain>
                 <template v-slot:view>
                     <RouterView />
