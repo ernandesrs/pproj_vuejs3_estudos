@@ -1,9 +1,7 @@
 <template>
     <div class="grid grid-cols-12 h-screen overflow-hidden relative">
         <!-- backdrop -->
-        <div v-if="inMobile && visible"
-            class="bg-gray-900 opacity-80 w-screen h-screen absolute z-30 top-0 left-0">
-        </div>
+        <BackdropUi v-if="inMobile" v-show="visible" />
         <!-- /backdrop -->
 
         <!-- sidebar -->
@@ -76,6 +74,7 @@
 </template>
 
 <script>
+import BackdropUi from '../BackdropUi.vue';
 
 let sidebarMobileClass = "sidebar-mobile";
 let contentMobileClass = "content-mobile";
@@ -88,7 +87,8 @@ let contentDesktopWoSidebarClass = "content-desktop-wosidebar";
 let MIN_WIDTH = 768;
 
 export default {
-    name: 'SidebarUi',
+    name: "SidebarUi",
+    components: { BackdropUi },
 
     data() {
         return {
@@ -116,7 +116,6 @@ export default {
                 }
             }
         },
-
         inMobile(inMobile) {
             if (inMobile) {
                 this.sidebarClass = sidebarMobileClass;
@@ -125,7 +124,6 @@ export default {
                 this.sidebarClass = sidebarDesktopClass;
                 this.contentClass = contentDesktopClass;
             }
-
             this.toggler();
         }
     },
@@ -134,10 +132,8 @@ export default {
         toggler() {
             this.visible = !this.visible;
         },
-
         windowResized() {
             let cwidth = window.innerWidth;
-
             if (cwidth <= MIN_WIDTH && !this.inMobile)
                 this.inMobile = true;
             else if (cwidth > MIN_WIDTH && this.inMobile)
@@ -145,4 +141,5 @@ export default {
         },
     },
 };
+
 </script>
