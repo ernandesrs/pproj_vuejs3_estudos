@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #bebebe #f3f3f3;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f3f3f3;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #bebebe;
+    border-radius: 20px;
+    border: 3px solid #f3f3f3;
+}
+
 .sidebar-mobile {
     @apply fixed z-50;
     width: 100%;
