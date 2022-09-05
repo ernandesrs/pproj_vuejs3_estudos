@@ -85,16 +85,46 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="home">
+
+		<h1 class="text-xl font-semibold">Cards</h1>
+
+		<div class="py-5">
+			<CardGroupUi basis="basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+				<template v-slot:cards>
+					<CardItemUi>
+						<template v-slot:cardContent>
+							OPA
+						</template>
+					</CardItemUi>
+					<CardItemUi>
+						<template v-slot:cardContent>
+							OPA
+						</template>
+					</CardItemUi>
+					<CardItemUi>
+						<template v-slot:cardContent>
+							OPA
+						</template>
+					</CardItemUi>
+				</template>
+			</CardGroupUi>
+		</div>
+	</div>
 </template>
 
 <script>
+
 import DropdownUi from '@/components/Ui/Dropdown/DropdownUi.vue';
 import DropdownItemUi from '@/components/Ui/Dropdown/DropdownItemUi.vue';
 import DropdownSeparatorUi from '@/components/Ui/Dropdown/DropdownSeparatorUi.vue';
+import CardItemUi from '@/components/Ui/Card/CardItemUi.vue';
+import CardGroupUi from '@/components/Ui/Card/CardGroupUi.vue';
 
 export default {
 	name: 'HomeView',
-	components: { DropdownUi, DropdownItemUi, DropdownSeparatorUi },
+	components: { DropdownUi, DropdownItemUi, DropdownSeparatorUi, CardItemUi, CardGroupUi },
 
 	methods: {
 		onItem4Click(evt) {
@@ -102,4 +132,5 @@ export default {
 		}
 	}
 }
+
 </script>
